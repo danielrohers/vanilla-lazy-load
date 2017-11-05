@@ -1,0 +1,20 @@
+{
+  "name": "vanilla-lazy-load",
+  "version": "1.0.0",
+  "description": "Vanilla Lazy Load with IntersectionObserver and fallback",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danielrohers/vanilla-lazy-load.git"
+  },
+  "author": "Daniel Rohers Moura",
+  "bugs": {
+    "url": "https://github.com/danielrohers/vanilla-lazy-load/issues"
+  },
+  "homepage": "https://github.com/danielrohers/vanilla-lazy-load",
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.8.9",
+    "gulp-concat": "^2.4.1",
+    "gulp-uglify": "^3.0.0"
+  }
+}
