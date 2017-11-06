@@ -10,15 +10,11 @@
   } else {
     root.LazyLoad = factory(root);
   }
-})(this, function (root) {
+})(this, function () {
 
   'use strict';
 
-  var exports = {
-    selector: 'img[data-src]'
-  };
-
-  var images = [].slice.call(document.querySelectorAll(exports.selector));
+  var images = [].slice.call(document.querySelectorAll('img[data-src]'));
 
   function removeImage(index) {
     images.splice(index, 1);
@@ -88,6 +84,4 @@
   processScroll();
   window.addEventListener('scroll', processScroll);
   window.addEventListener('touchmove', processScroll);
-
-  return exports;
 });
