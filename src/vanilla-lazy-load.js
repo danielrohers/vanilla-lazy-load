@@ -31,6 +31,10 @@
     };
   }
 
+  function isVisible(image) {
+    return !!(image.offsetWidth || image.offsetHeight || image.getClientRects().length);
+  }
+
   function isElementInViewport(image) {
     if (image.src) return false;
 
@@ -40,9 +44,7 @@
     rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
     rect.right <= (window.innerWidth || document.documentElement.clientWidth));
 
-    var isVisible = image.offsetLeft > 0;
-
-    return isVisible && inViewport;
+    return isVisible(image) && inViewport;
   }
 
   function processImageFallback(image, index) {
