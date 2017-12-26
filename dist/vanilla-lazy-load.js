@@ -1,5 +1,5 @@
 /*
- * vanilla-lazy-load - v1.0.0
+ * vanilla-lazy-load - v1.0.1
  * @danielrohers
 */
 ;(function (root, factory) {
@@ -15,6 +15,8 @@
   'use strict';
 
   var images = [].slice.call(document.querySelectorAll('img[data-src]'));
+  var options = { passive: true };
+  var intervalImageFallback = 100;
 
   function removeImage(index) {
     images.splice(index, 1);
@@ -53,7 +55,7 @@
         clearInterval(interval);
         loadImage(image, index);
       }
-    }, 100);
+    }, intervalImageFallback);
   }
 
   function processImage(image, index) {
@@ -84,6 +86,6 @@
   };
 
   processScroll();
-  window.addEventListener('scroll', processScroll);
-  window.addEventListener('touchmove', processScroll);
+  window.addEventListener('scroll', processScroll, options);
+  window.addEventListener('touchmove', processScroll, options);
 });
