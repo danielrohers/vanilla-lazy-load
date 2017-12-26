@@ -1,5 +1,5 @@
 /*
- * vanilla-lazy-load - v1.0.1
+ * vanilla-lazy-load - v1.0.2
  * @danielrohers
 */
 ;(function (root, factory) {

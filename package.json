@@ -1,6 +1,6 @@
 {
   "name": "vanilla-lazy-load",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Vanilla Lazy Load with IntersectionObserver and fallback",
   "repository": {
     "type": "git",
