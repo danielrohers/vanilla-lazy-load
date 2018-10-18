@@ -1,27 +1,25 @@
-var gulp = require('gulp');
-var del = require('del');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
+const gulp = require('gulp');
+const del = require('del');
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
 
-var paths = {
+const paths = {
   src: 'src/*.js',
   dist: 'dist'
-}
+};
 
-gulp.task('clean', function () {
-  del.sync(['dist']);
-});
+gulp.task('clean', () => del(['dist']));
 
-gulp.task('uglify', ['clean'], function () {
+gulp.task('uglify', () => {
   return gulp.src(paths.src)
     .pipe(concat('vanilla-lazy-load.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest(paths.dist));
 });
 
-gulp.task('oridinal', ['clean'], function () {
+gulp.task('oridinal', () => {
   return gulp.src(paths.src)
     .pipe(gulp.dest(paths.dist));
 })
 
-gulp.task('dist', ['uglify', 'oridinal'])
+gulp.task('dist', gulp.series('clean', gulp.parallel('uglify', 'oridinal')))

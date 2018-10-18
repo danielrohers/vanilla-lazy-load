@@ -11,10 +11,13 @@
     "url": "https://github.com/danielrohers/vanilla-lazy-load/issues"
   },
   "homepage": "https://github.com/danielrohers/vanilla-lazy-load",
+  "scripts": {
+    "start": "gulp dist"
+  },
   "devDependencies": {
     "del": "^3.0.0",
-    "gulp": "^3.8.9",
+    "gulp": "^4.0.0",
     "gulp-concat": "^2.4.1",
-    "gulp-uglify": "^3.0.0"
+    "gulp-uglify": "^3.0.1"
   }
 }
